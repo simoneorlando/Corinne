@@ -90,7 +90,6 @@ class FSA(ABC):
                         for k, value in final_states.items():
                             if value == new_node:
                                 final_edges.append((id_node, label, str(k), sender, receiver, message))
-        # TODO controlla states and edges dopo questa operazione
         self.edges = set(final_edges)
         self.states = set(final_states.keys())
     

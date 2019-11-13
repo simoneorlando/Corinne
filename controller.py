@@ -35,6 +35,12 @@ class Controller:
         """ Return the labels of a given graph """
         return self.ca_dict.get(graph_name).labels
     
+    def check_for_epsilon_moves(self, graph_name):
+        for edge in self.ca_dict.get(graph_name).edges:
+            if edge[1] == "":
+                return "Yes"
+        return "No"
+    
     def GGparser(self, path_file, path_store):
         """ Parser a Chorgram file and create a converted
             version (DOT) in a given path.

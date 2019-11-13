@@ -1,7 +1,7 @@
 import os
 import tkinter as tk
 from tkinter import ttk
-from tkinter import filedialog, Frame, Entry, Scrollbar, Button, messagebox, Listbox, Radiobutton, PhotoImage
+from tkinter import filedialog, Frame, Entry, Button, messagebox, Listbox, Radiobutton, PhotoImage
 
 
 class MyGui(ttk.Frame):
@@ -10,7 +10,7 @@ class MyGui(ttk.Frame):
     _log = None
     _screen_width = None
     _screen_height = None
-    COLOR_buttons = '#83778B'
+    COLOR_buttons = '#FFCB6B'
     COLOR_frames = '#333333'
     COLOR_foreground = '#D9C7B3'
     COLOR_log = '#1E1E1E'
@@ -109,12 +109,12 @@ class MyGui(ttk.Frame):
         #self._log.configure(yscrollcommand=_scrollb.set)
         #_scrollb.config(command=self._log.yview)
         self._log.grid(column=0, row=0, padx=10, sticky=(tk.N, tk.S, tk.E, tk.W))
+
         # _scrollb.grid(column=1, row=0, sticky=tk.S + tk.N)
         
         # create the tab manager for property
         self.tabs = ttk.Notebook(property_frame)
     
-    # This is where we launch the file manager bar.
     def open_file(self):
         path = filedialog.askopenfilename(initialdir=".",
                                           filetypes=(("DOT graph", "*.gv *.dot"),
@@ -295,56 +295,70 @@ class MyGui(ttk.Frame):
     def __add_new_tab__(self, graph_name):
         self.tabs.grid(row=0, column=0, sticky=(tk.N, tk.S, tk.E, tk.W), padx=10, pady=5)
         frame = ttk.Frame(self.tabs)
-        frame.grid_rowconfigure(6, weight=1)
-        frame.grid_columnconfigure(2, weight=1)
+        frame.grid_columnconfigure(5, weight=1)
+        #frame.grid_columnconfigure(0, weight=2)
+        #frame.grid_rowconfigure(1, weight=2)
+
         # Add the tab
         self.tabs.add(frame, text=graph_name)
+        
+        # -------- LEFT widgets --------- #
+        
         # create N.states label and textbox
-        label_s = tk.Label(frame, text="N° States", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
-        label_s.grid(row=0, column=0, pady=10, padx=10)
+        label_s = tk.Label(frame, text="N° States :", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
+        label_s.grid(row=0, column=0, pady=10, padx=40)
         entry_s = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0)
         entry_s.grid(row=0, column=1, sticky=tk.W)
         entry_s.insert(tk.END, str(len(self.controller.get_states(graph_name))))
         # create N.edges label and textbox
-        label_e = tk.Label(frame, text="N° Edges", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
-        label_e.grid(row=1, column=0, pady=10, padx=10)
-        entry_e = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0, )
+        label_e = tk.Label(frame, text="N° Edges :", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
+        label_e.grid(row=1, column=0, pady=30, padx=10)
+        entry_e = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0)
         entry_e.grid(row=1, column=1, sticky=tk.W)
         entry_e.insert(tk.END, str(len(self.controller.get_edges(graph_name))))
-        # create Labels label, textbox and Optionmenu
-        label_l = tk.Label(frame, text="N° Labels", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
-        label_l.grid(row=3, column=0, pady=10, padx=10)
-        entry_l = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0, )
-        entry_l.grid(row=3, column=1, sticky=tk.W)
+        # create Start Node label and textbox
+        label_sn = tk.Label(frame, text="Start Node :", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
+        label_sn.grid(row=2, column=0, pady=10, padx=10)
+        entry_sn = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0)
+        entry_sn.grid(row=2, column=1, sticky=tk.W)
+        entry_sn.insert(tk.END, str(self.controller.get_start_node(graph_name)))
+
+        # ------- RIGHT widgets ----------- #
+        
+        # create N.Labels label, textbox and Optionmenu
+        label_l = tk.Label(frame, text="N° Labels :", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
+        label_l.grid(row=0, column=2, pady=10, padx=40)
+        entry_l = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0)
+        entry_l.grid(row=0, column=3, sticky=tk.W)
         option_l = tk.StringVar()
         elements_l = list(self.controller.get_labels(graph_name))
         entry_l.insert(tk.END, len(elements_l))
         option_l.set(elements_l[0])
         label_menu = ttk.OptionMenu(frame, option_l, elements_l[0], *elements_l)
-        label_menu.grid(row=3, column=2, pady=10, padx=10, sticky=tk.W)
-        # create participants label, textbox and Optionmenu
-        label_p = tk.Label(frame, text="N° Participants", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
-        label_p.grid(row=4, column=0, pady=10, padx=10)
-        entry_p = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0, )
-        entry_p.grid(row=4, column=1, sticky=tk.W)
+        label_menu.grid(row=0, column=4, pady=10, padx=40, sticky=tk.W)
+        # create N.participants label, textbox and Optionmenu
+        label_p = tk.Label(frame, text="N° Participants :", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
+        label_p.grid(row=1, column=2, pady=10, padx=10)
+        entry_p = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0)
+        entry_p.grid(row=1, column=3, sticky=tk.W)
         option_p = tk.StringVar()
         elements_p = list(self.controller.get_participants(graph_name))
         entry_p.insert(tk.END, len(elements_p))
         option_p.set(elements_p[0])
         part_menu = ttk.OptionMenu(frame, option_p, elements_p[0], *elements_p)
-        part_menu.grid(row=4, column=2, pady=10, padx=10, sticky=tk.W)
-        # create Start Node label and textbox
-        label_sn = tk.Label(frame, text="Start Node", wraplength=500, bg=self.COLOR_frames, fg=self.COLOR_foreground)
-        label_sn.grid(row=5, column=0, pady=10, padx=10)
-        entry_sn = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0, )
-        entry_sn.grid(row=5, column=1, sticky=tk.W)
-        entry_sn.insert(tk.END, str(self.controller.get_start_node(graph_name)))
+        part_menu.grid(row=1, column=4, pady=10, padx=40, sticky=tk.W)
+        # create epsilon moves label and textbox
+        label_eps = tk.Label(frame, text="Epsilon moves :", bg=self.COLOR_frames, fg=self.COLOR_foreground)
+        label_eps.grid(row=2, column=2, pady=10, padx=10)
+        entry_eps = Entry(frame, justify=tk.CENTER, width=5, fg='black', highlightthickness=0)
+        entry_eps.grid(row=2, column=3, sticky=tk.W)
+        entry_eps.insert(tk.END, self.controller.check_for_epsilon_moves(graph_name))
         # create close button
         close_button = Button(frame, text='X', bg=self.COLOR_frames, highlightthickness=0, borderwidth=0, command=lambda: (
             self.controller.remove_record(self.tabs.tab(self.tabs.select(), "text")),
             # remove the record from opened graphs struct
             self.tabs.forget(self.tabs.select())))  # delete the tab
-        close_button.grid(row=0, column=2, sticky=tk.E + tk.N)
+        close_button.grid(row=0, column=5, sticky=tk.E + tk.N)
         
         # once created, select the tab
         self.tabs.select(frame)
@@ -410,6 +424,8 @@ class MyGui(ttk.Frame):
         for line in msg:
             self._log.insert(tk.END, line)
         self._log.see(tk.END)
+        # make the last item background red
+        #self._log.itemconfig(tk.END, {'bg': 'red'})
     
     def popupmsg(self, msg):
         popup = tk.Toplevel(padx=20, pady=20)
