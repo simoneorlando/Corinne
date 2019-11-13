@@ -1,8 +1,9 @@
+# Corinne
+_Corinne is a tool to manage Choreography Automata (CA)._
+
 <p align="center">
 	<img src="https://i.imgur.com/rzXNb5Q.png" alt="Corinne">
 </p>
-# Corinne
-_Corinne is a tool to manage Choreography Automata (CA)._
 
 ### Table of Contents
 
