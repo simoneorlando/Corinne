@@ -107,6 +107,15 @@ class DOTListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by DOTParser#cfsm_interaction.
+    def enterCfsm_interaction(self, ctx:DOTParser.Cfsm_interactionContext):
+        pass
+
+    # Exit a parse tree produced by DOTParser#cfsm_interaction.
+    def exitCfsm_interaction(self, ctx:DOTParser.Cfsm_interactionContext):
+        pass
+
+
     # Enter a parse tree produced by DOTParser#choice.
     def enterChoice(self, ctx:DOTParser.ChoiceContext):
         pass

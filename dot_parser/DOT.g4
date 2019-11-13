@@ -64,6 +64,7 @@ string : (Uppercase_letter | Lowercase_letter | Number | '-' | '_' | ',')+ ;
 */
 
 label :  Uppercase_letter '->' Uppercase_letter ':' (Lowercase_letter)+ # interaction
+      |  Uppercase_letter Uppercase_letter ('?'|'!') (Lowercase_letter)+ # cfsm_interaction
 
             /* these tokens are specified to recognize also
                graphs from Domitilla's Graphs format

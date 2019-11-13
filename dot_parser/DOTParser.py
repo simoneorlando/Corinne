@@ -8,8 +8,8 @@ import sys
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\33")
-        buf.write("\u0099\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\35")
+        buf.write("\u00a1\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7")
         buf.write("\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\3\2\3\2\3\2")
         buf.write("\3\2\3\2\6\2\36\n\2\r\2\16\2\37\3\2\3\2\3\3\3\3\3\3\3")
         buf.write("\4\3\4\3\4\3\4\5\4+\n\4\3\5\3\5\3\5\3\5\5\5\61\n\5\7\5")
@@ -21,11 +21,12 @@ def serializedATN():
         buf.write("\t\5\ts\n\t\3\t\3\t\3\t\3\t\3\t\3\t\3\t\5\t|\n\t\5\t~")
         buf.write("\n\t\3\n\3\n\3\n\3\n\3\n\5\n\u0085\n\n\3\13\6\13\u0088")
         buf.write("\n\13\r\13\16\13\u0089\3\f\3\f\3\f\3\f\3\f\6\f\u0091\n")
-        buf.write("\f\r\f\16\f\u0092\3\f\3\f\5\f\u0097\n\f\3\f\2\2\r\2\4")
-        buf.write("\6\b\n\f\16\20\22\24\26\2\3\5\2\b\b\22\23\30\32\2\u00a3")
+        buf.write("\f\r\f\16\f\u0092\3\f\3\f\3\f\3\f\6\f\u0099\n\f\r\f\16")
+        buf.write("\f\u009a\3\f\3\f\5\f\u009f\n\f\3\f\2\2\r\2\4\6\b\n\f\16")
+        buf.write("\20\22\24\26\2\4\5\2\b\b\22\23\32\34\3\2\25\26\2\u00ad")
         buf.write("\2\30\3\2\2\2\4#\3\2\2\2\6*\3\2\2\2\b,\3\2\2\2\n9\3\2")
         buf.write("\2\2\fG\3\2\2\2\16X\3\2\2\2\20}\3\2\2\2\22\u0084\3\2\2")
-        buf.write("\2\24\u0087\3\2\2\2\26\u0096\3\2\2\2\30\31\7\3\2\2\31")
+        buf.write("\2\24\u0087\3\2\2\2\26\u009e\3\2\2\2\30\31\7\3\2\2\31")
         buf.write("\32\5\24\13\2\32\33\7\4\2\2\33\35\7\5\2\2\34\36\5\4\3")
         buf.write("\2\35\34\3\2\2\2\36\37\3\2\2\2\37\35\3\2\2\2\37 \3\2\2")
         buf.write("\2 !\3\2\2\2!\"\7\6\2\2\"\3\3\2\2\2#$\5\6\4\2$%\7\5\2")
@@ -42,26 +43,30 @@ def serializedATN():
         buf.write("\2\2NM\3\2\2\2NO\3\2\2\2OP\3\2\2\2PR\5\20\t\2QN\3\2\2")
         buf.write("\2RU\3\2\2\2SQ\3\2\2\2ST\3\2\2\2TV\3\2\2\2US\3\2\2\2V")
         buf.write("W\7\t\2\2W\r\3\2\2\2XY\7\16\2\2Y_\7\n\2\2Z[\7\r\2\2[\\")
-        buf.write("\5\24\13\2\\]\7\r\2\2]`\3\2\2\2^`\7\32\2\2_Z\3\2\2\2_")
+        buf.write("\5\24\13\2\\]\7\r\2\2]`\3\2\2\2^`\7\34\2\2_Z\3\2\2\2_")
         buf.write("^\3\2\2\2`\17\3\2\2\2ab\7\13\2\2bc\7\f\2\2ce\7\r\2\2d")
         buf.write("f\5\26\f\2ed\3\2\2\2ef\3\2\2\2fg\3\2\2\2g~\7\r\2\2hi\7")
-        buf.write("\17\2\2ij\7\f\2\2j~\7\27\2\2kl\7\20\2\2lr\7\f\2\2mn\7")
-        buf.write("\r\2\2no\5\24\13\2op\7\r\2\2ps\3\2\2\2qs\7\32\2\2rm\3")
+        buf.write("\17\2\2ij\7\f\2\2j~\7\31\2\2kl\7\20\2\2lr\7\f\2\2mn\7")
+        buf.write("\r\2\2no\5\24\13\2op\7\r\2\2ps\3\2\2\2qs\7\34\2\2rm\3")
         buf.write("\2\2\2rq\3\2\2\2s~\3\2\2\2tu\7\21\2\2u{\7\f\2\2vw\7\r")
-        buf.write("\2\2wx\5\24\13\2xy\7\r\2\2y|\3\2\2\2z|\7\32\2\2{v\3\2")
+        buf.write("\2\2wx\5\24\13\2xy\7\r\2\2y|\3\2\2\2z|\7\34\2\2{v\3\2")
         buf.write("\2\2{z\3\2\2\2|~\3\2\2\2}a\3\2\2\2}h\3\2\2\2}k\3\2\2\2")
-        buf.write("}t\3\2\2\2~\21\3\2\2\2\177\u0085\7\32\2\2\u0080\u0081")
+        buf.write("}t\3\2\2\2~\21\3\2\2\2\177\u0085\7\34\2\2\u0080\u0081")
         buf.write("\7\r\2\2\u0081\u0082\5\24\13\2\u0082\u0083\7\r\2\2\u0083")
         buf.write("\u0085\3\2\2\2\u0084\177\3\2\2\2\u0084\u0080\3\2\2\2\u0085")
         buf.write("\23\3\2\2\2\u0086\u0088\t\2\2\2\u0087\u0086\3\2\2\2\u0088")
         buf.write("\u0089\3\2\2\2\u0089\u0087\3\2\2\2\u0089\u008a\3\2\2\2")
-        buf.write("\u008a\25\3\2\2\2\u008b\u008c\7\30\2\2\u008c\u008d\7\n")
-        buf.write("\2\2\u008d\u008e\7\30\2\2\u008e\u0090\7\24\2\2\u008f\u0091")
-        buf.write("\7\31\2\2\u0090\u008f\3\2\2\2\u0091\u0092\3\2\2\2\u0092")
-        buf.write("\u0090\3\2\2\2\u0092\u0093\3\2\2\2\u0093\u0097\3\2\2\2")
-        buf.write("\u0094\u0097\7\25\2\2\u0095\u0097\7\26\2\2\u0096\u008b")
-        buf.write("\3\2\2\2\u0096\u0094\3\2\2\2\u0096\u0095\3\2\2\2\u0097")
-        buf.write("\27\3\2\2\2\23\37*\60\64AENS_er{}\u0084\u0089\u0092\u0096")
+        buf.write("\u008a\25\3\2\2\2\u008b\u008c\7\32\2\2\u008c\u008d\7\n")
+        buf.write("\2\2\u008d\u008e\7\32\2\2\u008e\u0090\7\24\2\2\u008f\u0091")
+        buf.write("\7\33\2\2\u0090\u008f\3\2\2\2\u0091\u0092\3\2\2\2\u0092")
+        buf.write("\u0090\3\2\2\2\u0092\u0093\3\2\2\2\u0093\u009f\3\2\2\2")
+        buf.write("\u0094\u0095\7\32\2\2\u0095\u0096\7\32\2\2\u0096\u0098")
+        buf.write("\t\3\2\2\u0097\u0099\7\33\2\2\u0098\u0097\3\2\2\2\u0099")
+        buf.write("\u009a\3\2\2\2\u009a\u0098\3\2\2\2\u009a\u009b\3\2\2\2")
+        buf.write("\u009b\u009f\3\2\2\2\u009c\u009f\7\27\2\2\u009d\u009f")
+        buf.write("\7\30\2\2\u009e\u008b\3\2\2\2\u009e\u0094\3\2\2\2\u009e")
+        buf.write("\u009c\3\2\2\2\u009e\u009d\3\2\2\2\u009f\27\3\2\2\2\24")
+        buf.write("\37*\60\64AENS_er{}\u0084\u0089\u0092\u009a\u009e")
         return buf.getvalue()
 
 
@@ -78,15 +83,15 @@ class DOTParser ( Parser ):
     literalNames = [ "<INVALID>", "'digraph'", "'{'", "'\n'", "'}'", "'['", 
                      "','", "']'", "'->'", "'label'", "'='", "'\"'", "'s0'", 
                      "'shape'", "'height'", "'width'", "'-'", "'_'", "':'", 
-                     "'+'", "'|'" ]
+                     "'?'", "'!'", "'+'", "'|'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "Shape", "Uppercase_letter", "Lowercase_letter", 
-                      "Number", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "Shape", "Uppercase_letter", 
+                      "Lowercase_letter", "Number", "WS" ]
 
     RULE_graph = 0
     RULE_stmt_list = 1
@@ -124,11 +129,13 @@ class DOTParser ( Parser ):
     T__17=18
     T__18=19
     T__19=20
-    Shape=21
-    Uppercase_letter=22
-    Lowercase_letter=23
-    Number=24
-    WS=25
+    T__20=21
+    T__21=22
+    Shape=23
+    Uppercase_letter=24
+    Lowercase_letter=25
+    Number=26
+    WS=27
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -489,7 +496,7 @@ class DOTParser ( Parser ):
                 self.state = 63
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.T__18) | (1 << DOTParser.T__19) | (1 << DOTParser.Uppercase_letter))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.T__20) | (1 << DOTParser.T__21) | (1 << DOTParser.Uppercase_letter))) != 0):
                     self.state = 62
                     self.label()
 
@@ -720,7 +727,7 @@ class DOTParser ( Parser ):
                 self.state = 99
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.T__18) | (1 << DOTParser.T__19) | (1 << DOTParser.Uppercase_letter))) != 0):
+                if (((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << DOTParser.T__20) | (1 << DOTParser.T__21) | (1 << DOTParser.Uppercase_letter))) != 0):
                     self.state = 98
                     self.label()
 
@@ -981,6 +988,38 @@ class DOTParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class Cfsm_interactionContext(LabelContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a DOTParser.LabelContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def Uppercase_letter(self, i:int=None):
+            if i is None:
+                return self.getTokens(DOTParser.Uppercase_letter)
+            else:
+                return self.getToken(DOTParser.Uppercase_letter, i)
+        def Lowercase_letter(self, i:int=None):
+            if i is None:
+                return self.getTokens(DOTParser.Lowercase_letter)
+            else:
+                return self.getToken(DOTParser.Lowercase_letter, i)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterCfsm_interaction" ):
+                listener.enterCfsm_interaction(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitCfsm_interaction" ):
+                listener.exitCfsm_interaction(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitCfsm_interaction" ):
+                return visitor.visitCfsm_interaction(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class InteractionContext(LabelContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a DOTParser.LabelContext
@@ -1042,10 +1081,10 @@ class DOTParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_label)
         self._la = 0 # Token type
         try:
-            self.state = 148
+            self.state = 156
             self._errHandler.sync(self)
-            token = self._input.LA(1)
-            if token in [DOTParser.Uppercase_letter]:
+            la_ = self._interp.adaptivePredict(self._input,17,self._ctx)
+            if la_ == 1:
                 localctx = DOTParser.InteractionContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 137
@@ -1069,20 +1108,49 @@ class DOTParser ( Parser ):
                         break
 
                 pass
-            elif token in [DOTParser.T__18]:
-                localctx = DOTParser.ChoiceContext(self, localctx)
+
+            elif la_ == 2:
+                localctx = DOTParser.Cfsm_interactionContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 146
-                self.match(DOTParser.T__18)
-                pass
-            elif token in [DOTParser.T__19]:
-                localctx = DOTParser.ForkContext(self, localctx)
-                self.enterOuterAlt(localctx, 3)
+                self.match(DOTParser.Uppercase_letter)
                 self.state = 147
-                self.match(DOTParser.T__19)
+                self.match(DOTParser.Uppercase_letter)
+                self.state = 148
+                _la = self._input.LA(1)
+                if not(_la==DOTParser.T__18 or _la==DOTParser.T__19):
+                    self._errHandler.recoverInline(self)
+                else:
+                    self._errHandler.reportMatch(self)
+                    self.consume()
+                self.state = 150 
+                self._errHandler.sync(self)
+                _la = self._input.LA(1)
+                while True:
+                    self.state = 149
+                    self.match(DOTParser.Lowercase_letter)
+                    self.state = 152 
+                    self._errHandler.sync(self)
+                    _la = self._input.LA(1)
+                    if not (_la==DOTParser.Lowercase_letter):
+                        break
+
                 pass
-            else:
-                raise NoViableAltException(self)
+
+            elif la_ == 3:
+                localctx = DOTParser.ChoiceContext(self, localctx)
+                self.enterOuterAlt(localctx, 3)
+                self.state = 154
+                self.match(DOTParser.T__20)
+                pass
+
+            elif la_ == 4:
+                localctx = DOTParser.ForkContext(self, localctx)
+                self.enterOuterAlt(localctx, 4)
+                self.state = 155
+                self.match(DOTParser.T__21)
+                pass
+
 
         except RecognitionException as re:
             localctx.exception = re

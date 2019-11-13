@@ -79,22 +79,13 @@ class Controller:
     
     def render(self, path_file, extension):
         try:
-            #main(path_file)  # check for errors
-            ca, domi_bool, graph_name = main(path_file)
+            main(path_file)  # check for errors
         except (parseError, ForkStatementDetected) as e:
             return e.message[0] + " " + e.message[1]  # return eventually an error message
         else:
-            # save_path = render('dot', extension, path_file)
-            # view(save_path)  # open the default image viewer
-            # return save_path
-            g = Digraph('prova')
-            for node in ca.states:
-                g.node(node)
-            for edge in ca.edges:
-                g.edge(edge[0], edge[1])
-                g.edge(edge[1], edge[2])
-            g.save('/home/simone/Projects/Tesi/example/prova.gv')
-            return 'ok'
+            save_path = render('dot', extension, path_file)
+            view(save_path)  # open the default image viewer
+            return save_path
 
     def make_product(self, graph_name1, graph_name2, path_to_store):
         """ Make the product of two choreography automata (ca1, ca2),

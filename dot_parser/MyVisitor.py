@@ -132,6 +132,10 @@ class MyVisitor(DOTVisitor):
         self.labels.add(interaction_string[3])
         return self.visitChildren(ctx)
 
+    # Visit a parse tree produced by DOTParser#cfsm_interaction.
+    def visitCfsm_interaction(self, ctx: DOTParser.Cfsm_interactionContext):
+        return self.visitChildren(ctx)
+
     # Visit a parse tree produced by DOTParser#choice.
     def visitChoice(self, ctx:DOTParser.ChoiceContext):
         self.domitilla = True

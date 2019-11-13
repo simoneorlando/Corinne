@@ -1,3 +1,4 @@
+import os
 from .DOTParser import DOTParser
 """
 This file contains several functions used by check_and_fill class
@@ -5,7 +6,7 @@ and DomitillaConverter class
 """
 
 
-def extract_name(self, path_file):
+def extract_name(path_file):
     """ Extract graph name from path """
     path_splitted = os.path.split(path_file)
     filename_splitted = path_splitted[1].split('.')
