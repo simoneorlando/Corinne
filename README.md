@@ -53,12 +53,13 @@ Once taken one or more files as input, Corinne can apply some functions on it:
 * [fsa.py](fsa.py) : an abstract class to define a simple Finite State Machine and its methods.
 * [chor_auto.py](chor_auto.py) : a class to define the Choreography Automata (CA), inherits from fsa class.
 * [cfsm.py](cfsm.py) : a class to define the Communicating FSA (CFSA), inherits from fsa class.
-* [dot_parser/*](dot_parser/) : contains the dot parser and every files it need to parse and convert.
+* [dot_parser/*](dot_parser/) : contains the dot parser and every file it need to parse and convert.
 * [global_graph_parser/*](global_graph_parser/) : contains the Global Graph parser and every files it need to parse and convert.
 * [examples/*](examples/) : some examples.
 
 ### Author
 **Simone Orlando** - [simoneorlando](https://github.com/simoneorlando) - simoneorlando.cs@gmail.com
+**Ivan Lanese** - [lanese](https://github.com/lanese) - ivan.lanese@gmail.com
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
