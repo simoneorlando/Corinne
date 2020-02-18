@@ -60,6 +60,7 @@ Once taken one or more files as input, Corinne can apply some functions on it:
 ### Author
 Main author:
 **Simone Orlando** - [simoneorlando](https://github.com/simoneorlando) - simoneorlando.cs@gmail.com
+
 Other author(s):
 **Ivan Lanese** - [lanese](https://github.com/lanese) - ivan.lanese@gmail.com
 
